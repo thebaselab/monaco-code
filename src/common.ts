@@ -163,7 +163,7 @@ export function applyListeners(instance: monaco.editor.IStandaloneCodeEditor) {
       changeEditorThemeForColorScheme();
     });
 
-  (window as any).webkit.messageHandlers.toggleMessageHandler.postMessage({
+  (window as any).webkit?.messageHandlers?.toggleMessageHandler?.postMessage({
     Event: "Editor Initialising",
   });
 

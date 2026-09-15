@@ -1,10 +1,10 @@
 import * as monaco from "monaco-editor";
-import { URI } from "vscode/vscode/vs/base/common/uri";
+import { Uri as URI } from "vscode";
 import {
   // @ts-ignore-error
   DiffComputer,
   IChange,
-} from "vscode/vscode/vs/editor/common/diff/legacyLinesDiffComputer";
+} from "@codingame/monaco-vscode-api/vscode/vs/editor/common/diff/legacyLinesDiffComputer";
 import { decodeBase64 } from "./utilities";
 import { CodeStorage } from "./storage";
 

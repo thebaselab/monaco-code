@@ -9,13 +9,9 @@ import getThemeServiceOverride from "@codingame/monaco-vscode-theme-service-over
 import getTextmateServiceOverride from "@codingame/monaco-vscode-textmate-service-override";
 import "@codingame/monaco-vscode-theme-defaults-default-extension";
 import "@codingame/monaco-vscode-all-language-default-extensions";
-import "@codingame/monaco-vscode-typescript-language-features-default-extension";
-import "@codingame/monaco-vscode-json-language-features-default-extension";
-import "@codingame/monaco-vscode-css-language-features-default-extension";
-import "@codingame/monaco-vscode-html-language-features-default-extension";
 import getExtensionServiceOverride from "@codingame/monaco-vscode-extensions-service-override";
 import getConfigurationServiceOverride from "@codingame/monaco-vscode-configuration-service-override";
-import { useWorkerFactory } from "monaco-editor-wrapper/workerFactory";
+import { useWorkerFactory } from "monaco-languageclient/workerFactory";
 import {
   connectMonacoToLanguageServer,
   disconnectLanguageServer,
@@ -24,7 +20,7 @@ import {
 import { Uri } from "vscode";
 import { invalidateDecorations, provideOriginalTextForUri } from "./diff";
 // @ts-ignore-error
-import { EditorContributionRegistry } from "vscode/vscode/vs/editor/browser/editorExtensions";
+import { EditorContributionRegistry } from "@codingame/monaco-vscode-api/vscode/vs/editor/browser/editorExtensions";
 import { applyBase64AsTheme } from "./theme";
 import {
   applyListeners,

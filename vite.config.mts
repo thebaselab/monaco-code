@@ -1,10 +1,10 @@
 /* --------------------------------------------------------------------------------------------
  * Copyright (c) 2024 TypeFox and others.
- * Licensed under the MIT License. See LICENSE in the package root for license information.
+ * Licensed under the MIT License. See license in the project root for license information.
  * ------------------------------------------------------------------------------------------ */
 
 import { defineConfig } from "vite";
-// import path from 'path';
+import path from "node:path";
 import vsixPlugin from "@codingame/monaco-vscode-rollup-vsix-plugin";
 import importMetaUrlPlugin from "@codingame/esbuild-import-meta-url-plugin";
 
@@ -27,6 +27,14 @@ export default defineConfig({
     target: "esnext",
   },
   plugins: [vsixPlugin()],
+  resolve: {
+    alias: {
+      "@codingame/monaco-vscode-api/vscode": path.resolve(
+        __dirname,
+        "node_modules/@codingame/monaco-vscode-api/vscode/src"
+      ),
+    },
+  },
   optimizeDeps: {
     esbuildOptions: {
       plugins: [importMetaUrlPlugin],
